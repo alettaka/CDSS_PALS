@@ -1,11 +1,3 @@
-# CDSS_PALS
-
-Submission for group 5 project for the course 'Clinical Decision Support Systems'
-
-Team Members:  Sebastian Fernandez, Magdalena Hardegger, Albertine Karsies, Prerna Duhan 
-
-
-
 # Clinical Decision Support System: Paediatric Advanced Life Support
 
 Submission for group project for the course 'Clinical Decision Support Systems'
