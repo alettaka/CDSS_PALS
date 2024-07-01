@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_077xjni" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.15.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.19.0">
+  <decision id="Decision_0z2273r" name="Decision ventilation rate">
+    <informationRequirement id="InformationRequirement_0ceum91">
+      <requiredInput href="#InputData_1l595yy" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_02ia61v">
+      <input id="Input_1" camunda:inputVariable="Age in years">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>Age in years</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="Ventilation rate" typeRef="string" />
+      <rule id="DecisionRule_1o03odo">
+        <description>Tracheal tube in place? Check capnography!</description>
+        <inputEntry id="UnaryTests_0muadx7">
+          <text>[0..1[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v9bqi9">
+          <text>25/min </text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1syy8x2">
+        <description>Tracheal tube in place? Check capnography!</description>
+        <inputEntry id="UnaryTests_1qo6hg9">
+          <text>[1..8[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1phy8rs">
+          <text>20/min</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1oxel4l">
+        <description>Tracheal tube in place? Check capnography!</description>
+        <inputEntry id="UnaryTests_0o1qwpp">
+          <text>[8..12[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vs6fv4">
+          <text>15/min</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mr7pha">
+        <description>Tracheal tube in place? Check capnography!</description>
+        <inputEntry id="UnaryTests_1i13f2f">
+          <text>[12..18]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04wjsya">
+          <text>10/min</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19aylor">
+        <inputEntry id="UnaryTests_1sd60uw">
+          <text>]18..120[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kz743m">
+          <text>Check age!</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_1l595yy" name="age" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_0z2273r">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_116cthk" dmnElementRef="InputData_1l595yy">
+        <dc:Bounds height="45" width="125" x="168" y="238" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0tb0a7s" dmnElementRef="InformationRequirement_0ceum91">
+        <di:waypoint x="231" y="238" />
+        <di:waypoint x="250" y="200" />
+        <di:waypoint x="250" y="180" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
