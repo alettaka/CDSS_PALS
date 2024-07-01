@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_060vcfu" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.15.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.2.0">
+  <decision id="Decision_07i2anl" name="Decision shockable vs non-shockabe rhythms">
+    <informationRequirement id="InformationRequirement_0i071hj">
+      <requiredInput href="#InputData_1xx49i4" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1tchprg">
+      <requiredInput href="#InputData_1a3o2bh" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1047yto">
+      <requiredInput href="#InputData_00cxid8" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0nljrpd" biodi:annotationsWidth="400">
+      <input id="Input_1">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>ECG rhythm</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1ymevr4">
+        <inputExpression id="LiteralExpression_1oyeb0y" typeRef="string">
+          <text>Additional information</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_147tczx">
+        <inputExpression id="LiteralExpression_0hq7i4f" typeRef="boolean">
+          <text>Are you sure about ECG rhythm?</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="Shock recommended" typeRef="boolean" />
+      <rule id="DecisionRule_0yifpt1">
+        <inputEntry id="UnaryTests_04gydfx">
+          <text>Pulseless Ventricular Tachycardia (pVT)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_009uu1j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ir7xq4">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mfcmyu">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_093aovq">
+        <description>If not sure treat as shockable rhythm.</description>
+        <inputEntry id="UnaryTests_0rtj2br">
+          <text>Pulseless Ventricular Tachycardia (pVT)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nk0k1v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cj5k5l">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dbnnw2">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0qi9vcg">
+        <inputEntry id="UnaryTests_0la3lz8">
+          <text>Ventricular Fibrillation (VF)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jc2kwl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hvtqhn">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qrf9yo">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ikzt60">
+        <description>If not sure treat as shockable rhythm.</description>
+        <inputEntry id="UnaryTests_1pwabqh">
+          <text>Ventricular Fibrillation (VF)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1309yj7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k3wfd5">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yurkmi">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04l49a0">
+        <inputEntry id="UnaryTests_0ze0e9x">
+          <text>Pulseless Electrical Activity (PEA)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wl5e8q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e9tm7m">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_056op2w">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f8g69y">
+        <description>If not sure treat as shockable rhythm.</description>
+        <inputEntry id="UnaryTests_13ho12q">
+          <text>Pulseless Electrical Activity (PEA)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lywy4w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18w6jn3">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vwi0a7">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0qhgwd3">
+        <inputEntry id="UnaryTests_1kjgadc">
+          <text>Bradycardia (&lt;60bpm)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nazniy">
+          <text>hypoxia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_154mkt1">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00esx0w">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qmbtbr">
+        <description>If not sure treat as shockable rhythm.</description>
+        <inputEntry id="UnaryTests_171e487">
+          <text>Bradycardia (&lt;60bpm)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n48tm7">
+          <text>hypoxia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pcqnvj">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08bwv57">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0llij6q">
+        <inputEntry id="UnaryTests_0qp61yr">
+          <text>Bradycardia (&lt;60bpm)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t1yw8k">
+          <text>ischaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l4z05o">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tnoilr">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0m7iehy">
+        <description>If not sure treat as shockable rhythm.</description>
+        <inputEntry id="UnaryTests_0cux8he">
+          <text>Bradycardia (&lt;60bpm)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_049dn5n">
+          <text>ischaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wx9pb0">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ylw21u">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dj4kml">
+        <inputEntry id="UnaryTests_17tcq2j">
+          <text>Asystole</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a6vjjo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xce9hv">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mytf95">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qqioli">
+        <description>If not sure treat as shockable rhythm.</description>
+        <inputEntry id="UnaryTests_142l98y">
+          <text>Asystole</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_055o61h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s1vol9">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cp4bj2">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_162e2tm">
+        <description>If no signs of life and not shure about ECG: treat as shockable rhythm</description>
+        <inputEntry id="UnaryTests_1b55vfb">
+          <text>Not sure</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dy7qox">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m1w3o1">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02wlp3j">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_1xx49i4" name="ECG rhythm" />
+  <inputData id="InputData_1a3o2bh" name="Additional information" />
+  <inputData id="InputData_00cxid8" name="Confidence about ECG rhythm" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_07i2anl">
+        <dc:Bounds height="80" width="180" x="231" y="100" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1axnq19" dmnElementRef="InputData_1xx49i4">
+        <dc:Bounds height="45" width="125" x="118" y="258" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0kcomss" dmnElementRef="InformationRequirement_0i071hj">
+        <di:waypoint x="181" y="258" />
+        <di:waypoint x="276" y="200" />
+        <di:waypoint x="276" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_11fdqyt" dmnElementRef="InputData_1a3o2bh">
+        <dc:Bounds height="45" width="125" x="258" y="259" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_070pw5s" dmnElementRef="InformationRequirement_1tchprg">
+        <di:waypoint x="321" y="259" />
+        <di:waypoint x="321" y="200" />
+        <di:waypoint x="321" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1jqjuro" dmnElementRef="InputData_00cxid8">
+        <dc:Bounds height="45" width="125" x="398" y="259" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1umti0c" dmnElementRef="InformationRequirement_1047yto">
+        <di:waypoint x="461" y="259" />
+        <di:waypoint x="366" y="200" />
+        <di:waypoint x="366" y="180" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

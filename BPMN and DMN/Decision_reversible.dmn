@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_17bj0bu" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.15.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.19.0">
+  <decision id="Decision_1iv472q" name="Decision reversible causes">
+    <informationRequirement id="InformationRequirement_1urn1t3">
+      <requiredInput href="#InputData_0k6xsw7" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_11oke6u">
+      <requiredInput href="#InputData_0teyghn" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1s928un">
+      <requiredInput href="#InputData_1kkxde5" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_18eh5gq" hitPolicy="COLLECT">
+      <input id="Input_1">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>Reversible cause</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_05rf3vl" label="present">
+        <inputExpression id="LiteralExpression_0ywcoe8" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="Reversible cause present" typeRef="boolean" biodi:width="192" />
+      <rule id="DecisionRule_1o3512k">
+        <inputEntry id="UnaryTests_1hrqjzh">
+          <text>Hypoxia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ijbbhk">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14w4rfv">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rodw1s">
+        <inputEntry id="UnaryTests_1pui197">
+          <text>Hypoxia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06iyz19">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13u1wnv">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10aqhpk">
+        <inputEntry id="UnaryTests_14bwd3n">
+          <text>Hypovolaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ajep1c">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11l9sxg">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0siy3bz">
+        <inputEntry id="UnaryTests_0a4p5j1">
+          <text>Hypovolaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fm8okc">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qvjjbx">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09uw297">
+        <inputEntry id="UnaryTests_11qbsxa">
+          <text>Hypothermia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pvq5hr">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11dbtyo">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1n6udi2">
+        <inputEntry id="UnaryTests_1ahbb09">
+          <text>Hypothermia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1juqmh2">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dgwvd7">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1twsgp5">
+        <inputEntry id="UnaryTests_1asa1ym">
+          <text>Hyperthermia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bs5wlk">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15m4ak3">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1we5vql">
+        <inputEntry id="UnaryTests_1hf3if2">
+          <text>Hyperthermia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nkcxkm">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05pd9hp">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04yhbeu">
+        <inputEntry id="UnaryTests_11owjv6">
+          <text>Toxic agents</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fp3j6e">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d0uj1q">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vog973">
+        <inputEntry id="UnaryTests_0tvw7wh">
+          <text>Toxic agents</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vci86y">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dflhfb">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ewvvmp">
+        <inputEntry id="UnaryTests_1aafybc">
+          <text>Tension pneumothorax</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ttr23n">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xs84qd">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_030g7s4">
+        <inputEntry id="UnaryTests_03kztwh">
+          <text>Tension pneumothorax</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ckwmef">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07ycsh0">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bjv1wm">
+        <inputEntry id="UnaryTests_0ulcz9b">
+          <text>Tamponade (cardiac)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ruds45">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11b2eog">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dwqkvp">
+        <inputEntry id="UnaryTests_0r1ssl0">
+          <text>Tamponade (cardiac)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08to1hw">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ldt1af">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gpgxam">
+        <inputEntry id="UnaryTests_0lag9n6">
+          <text>Thrombosis (coronary or pulmonary)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06wf2py">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n8gnb2">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0p6sjbw">
+        <inputEntry id="UnaryTests_1ozuwf2">
+          <text>Thrombosis (coronary or pulmonary)</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nzpeid">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00qnqo3">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1917r9o">
+        <inputEntry id="UnaryTests_0zbmhoz">
+          <text>Hyperkalaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bbrr14">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0p7n82b">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0upl7ep">
+        <inputEntry id="UnaryTests_1a7xk47">
+          <text>Hyperkalaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m95921">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05hmdby">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xmwqrs">
+        <inputEntry id="UnaryTests_085bzs0">
+          <text>Hypokalaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kvi375">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qilfij">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1k53faf">
+        <inputEntry id="UnaryTests_0zwv5xe">
+          <text>Hypokalaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w19ytk">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fhqinw">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0p7utt1">
+        <inputEntry id="UnaryTests_0e5ncie">
+          <text>Hypercalcaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c4w8by">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0p5wz5w">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f4zqmw">
+        <inputEntry id="UnaryTests_1w7ociq">
+          <text>Hypercalcaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cjhss2">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ur9aq7">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ro14gb">
+        <inputEntry id="UnaryTests_1oxea0g">
+          <text>Hypocalcaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vjpag2">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u2hcdf">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12mq9q7">
+        <inputEntry id="UnaryTests_1flppp1">
+          <text>Hypocalcaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xmwbqk">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_063r5tq">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1li4wli">
+        <inputEntry id="UnaryTests_1n79uwv">
+          <text>Hypermagnesemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1adrz96">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hlk9vi">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mmbkbk">
+        <inputEntry id="UnaryTests_1nr395d">
+          <text>Hypermagnesemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_146leae">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jc051n">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0m6iuhb">
+        <inputEntry id="UnaryTests_1wfloib">
+          <text>Hypomagnesemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0upxb5x">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dn81i8">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tjpexl">
+        <inputEntry id="UnaryTests_1nxu34f">
+          <text>Hypomagnesemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qtogfo">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kyp2um">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wrzxwy">
+        <inputEntry id="UnaryTests_07efxvm">
+          <text>Hypoglycaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fyq2ag">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nrvkoz">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rmuwwj">
+        <inputEntry id="UnaryTests_1um73bl">
+          <text>Hypoglycaemia</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xeyj16">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01dd001">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0k6xsw7" name="Clinician&#39;s decision" />
+  <inputData id="InputData_0teyghn" name="Point of care serum values" />
+  <inputData id="InputData_1kkxde5" name="Point of care ultrasound" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_1iv472q">
+        <dc:Bounds height="80" width="180" x="331" y="110" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1gse381" dmnElementRef="InputData_0k6xsw7">
+        <dc:Bounds height="45" width="125" x="188" y="268" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_12di1i2" dmnElementRef="InformationRequirement_1urn1t3">
+        <di:waypoint x="251" y="268" />
+        <di:waypoint x="376" y="210" />
+        <di:waypoint x="376" y="190" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0sckcl2" dmnElementRef="InputData_0teyghn">
+        <dc:Bounds height="45" width="125" x="358" y="278" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_01ulm09" dmnElementRef="InformationRequirement_11oke6u">
+        <di:waypoint x="421" y="278" />
+        <di:waypoint x="421" y="210" />
+        <di:waypoint x="421" y="190" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1ui6835" dmnElementRef="InputData_1kkxde5">
+        <dc:Bounds height="45" width="125" x="507" y="278" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0a9abad" dmnElementRef="InformationRequirement_1s928un">
+        <di:waypoint x="570" y="278" />
+        <di:waypoint x="466" y="210" />
+        <di:waypoint x="466" y="190" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
