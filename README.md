@@ -10,6 +10,7 @@ Submission for group project for the course 'Clinical Decision Support Systems'
 
 ## Project Structure
 
+- [Presentation Slide Deck] (CDSS_PLS_Presentation.pptx)
 - [Project Documentation](Paediatric%20Life%20Support%20CDSS%20Documentation.pdf)
 - [L2_BPMN and DMN](./L2_BPMN%20and%20DMN/PALSdraft_v2.1MH.bpmn), import the bpmn-files into this [demo-bpmn](https://demo.bpmn.io/) for preview.
 - [L3_ODK-Form](./L3_ODK-Form/Paediatric%20Advanced%20Life%20Support.xlsx)
